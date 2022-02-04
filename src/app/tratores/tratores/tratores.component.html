@@ -1,0 +1,24 @@
+<mat-card>
+
+  <mat-toolbar color="primary">
+    <span>Cadastrar Tratores</span>
+  </mat-toolbar>
+
+<table mat-table [dataSource]="tratores" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="marca">
+    <th mat-header-cell *matHeaderCellDef> Marca </th>
+    <td mat-cell *matCellDef="let trator"> {{trator.marca}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="modelo">
+    <th mat-header-cell *matHeaderCellDef> Modelo </th>
+    <td mat-cell *matCellDef="let trator"> {{trator.modelo}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</mat-card>
